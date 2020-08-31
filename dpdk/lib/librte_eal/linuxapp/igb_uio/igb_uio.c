@@ -433,6 +433,7 @@ igbuio_pci_probe(struct pci_dev *dev, const struct pci_device_id *id)
 			break;
 		}
 #endif
+		__attribute__((fallthrough));
 		/* fall back to INTX */
 	case RTE_INTR_MODE_LEGACY:
 		if (pci_intx_mask_supported(dev)) {
@@ -443,6 +444,7 @@ igbuio_pci_probe(struct pci_dev *dev, const struct pci_device_id *id)
 			break;
 		}
 		dev_notice(&dev->dev, "PCI INTX mask not supported\n");
+		__attribute__((fallthrough));
 		/* fall back to no IRQ */
 	case RTE_INTR_MODE_NONE:
 		udev->mode = RTE_INTR_MODE_NONE;
