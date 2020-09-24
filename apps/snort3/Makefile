@@ -3,14 +3,15 @@
 #       and do not be surprised when the build mentions hwloc
 
 # "master" for up-to-date version
-SNORTVERSION =BUILD_239
+#SNORTVERSION =BUILD_239
+SNORTVERSION =3.0.0-239
 SRCDIR = snort3-$(SNORTVERSION)
 
 target = snort
 exec_target = snort3.manifest
 
-level = ../../
-include ../../Makefile
+#level = ../../
+#include ../../Makefile
 
 INSTALLDIR=$(abspath .)/install
 DEPDIR=$(abspath .)/..
